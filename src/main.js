@@ -6,5 +6,5 @@ const app = createApp(App);
 const apiURL = process.env.VUE_APP_API_URL;
 const axiosInstance = axios.create({ baseURL: apiURL });
 app.config.globalProperties.$axios = axiosInstance;
-
+app.config.globalProperties.$apiURL = apiURL;
 app.mount("#app");

@@ -4,12 +4,18 @@
     <div>
       {{ items }}
     </div>
+    <GetVideoMetaData></GetVideoMetaData>
   </div>
 </template>
 
 <script>
+import GetVideoMetaData from "./GetVideoMetaData.vue";
+
 export default {
   name: "HelloWorld",
+  components: {
+    GetVideoMetaData,
+  },
   props: {
     msg: String,
   },
