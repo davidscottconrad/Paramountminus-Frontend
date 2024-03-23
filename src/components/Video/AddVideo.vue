@@ -25,8 +25,6 @@ export default {
     return {
       formData: {
         video: null,
-        title: "",
-        description: "",
       },
     };
   },
@@ -35,11 +33,11 @@ export default {
       this.formData.video = event.target.files[0];
     },
     submitForm() {
-      const url = "/upload-video/";
+      const url = "/video/";
       const formData = new FormData();
       formData.append("video", this.formData.video);
-      formData.append("title", this.formData.title);
-      formData.append("description", this.formData.description);
+      // formData.append("title", this.formData.title);
+      // formData.append("description", this.formData.description);
 
       this.$axios
         .post(url, formData, {
