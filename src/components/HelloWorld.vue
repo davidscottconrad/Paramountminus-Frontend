@@ -23,6 +23,9 @@ export default {
   data() {
     return { items: null };
   },
+  mounted() {
+    this.getTest();
+  },
   methods: {
     getTest() {
       console.log();
