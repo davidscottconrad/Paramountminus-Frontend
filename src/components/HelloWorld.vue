@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <button @click="getTest">test</button>
+    <button @click="getTest">tes</button>
     <div>
       {{ items }}
     </div>
