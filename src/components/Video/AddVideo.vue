@@ -6,6 +6,10 @@
         <input type="file" id="video" @change="handleVideoUpload" />
       </div>
       <div>
+        <label for="thumbnail">Thumbnail:</label>
+        <input type="file" id="thumbnail" @change="handleThumbnailUpload" />
+      </div>
+      <div>
         <label for="title">Title:</label>
         <input type="text" id="title" v-model="formData.title" />
       </div>
@@ -32,13 +36,17 @@ export default {
     handleVideoUpload(event) {
       this.formData.video = event.target.files[0];
     },
+    handleThumbnailUpload(event) {
+      this.formData.thumbnail = event.target.files[0];
+    },
     submitForm() {
       const url = "/video/";
       const formData = new FormData();
       formData.append("video", this.formData.video);
-      // formData.append("title", this.formData.title);
-      // formData.append("description", this.formData.description);
-
+      formData.append("name", this.formData.title);
+      formData.append("description", this.formData.description);
+      formData.append("photo", this.formData.thumbnail);
+      console.log(formData);
       this.$axios
         .post(url, formData, {
           headers: {
