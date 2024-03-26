@@ -1,27 +1,44 @@
 <template>
   <div class="hello">
     <button @click="getTest">tes</button>
-    <div>
-      {{ items }}
-    </div>
-    <GetVideoMetaData></GetVideoMetaData>
+    <AddVideo></AddVideo>
+    <MyVideo />
   </div>
 </template>
 
 <script>
-import GetVideoMetaData from "./GetVideoMetaData.vue";
+import MyVideo from "./Video/MyVideo.vue";
+import AddVideo from "./Video/AddVideo.vue";
 
 export default {
   name: "HelloWorld",
   components: {
-    GetVideoMetaData,
+    MyVideo,
+    AddVideo,
   },
   props: {
     msg: String,
   },
 
   data() {
-    return { items: null };
+    return {
+      items: null,
+      playerOptions: {
+        sources: [
+          {
+            src: `http://localhost:8000/video/?id=1`,
+
+            type: "video/mp4",
+          },
+        ],
+        width: "640",
+        height: "360",
+        autoplay: true,
+        controls: true,
+        muted: true,
+        // Add more Video.js options as needed
+      },
+    };
   },
   mounted() {
     this.getTest();
