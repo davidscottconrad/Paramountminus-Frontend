@@ -19,7 +19,7 @@ export default {
         controls: true,
         sources: [
           {
-            src: "http://localhost:8000/video/?id=1",
+            src: `${this.$apiURL}/video/?id=1`,
             type: "video/mp4",
           },
         ],
@@ -28,6 +28,9 @@ export default {
         muted: true,
       },
     };
+  },
+  mounted() {
+    console.log(this.$apiURL);
   },
 };
 </script>
