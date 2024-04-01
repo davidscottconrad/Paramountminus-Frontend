@@ -2,6 +2,9 @@
   <div id="app">
     <nav>
       <router-link to="/"></router-link>
+      <router-link to="/test"></router-link>
+      <router-link to="/admin"></router-link>
+      admin
     </nav>
     <router-view></router-view>
   </div>
