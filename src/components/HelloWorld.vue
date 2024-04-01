@@ -1,39 +1,20 @@
 <template>
-  <div>
-    <button @click="getTest">tes</button>
-    <AddVideo></AddVideo>
-    <MyVideo />
-  </div>
+  <div class="background"></div>
 </template>
 
 <script>
-import MyVideo from "./video/MyVideo.vue";
-import AddVideo from "./video/AddVideo.vue";
+// import MyVideo from "./video/MyVideo.vue";
+// import AddVideo from "./video/AddVideo.vue";
 
 export default {
   name: "HelloWorld",
   components: {
-    MyVideo,
-    AddVideo,
+    // MyVideo,
+    // AddVideo,
   },
   data() {
     return {
       items: null,
-      playerOptions: {
-        sources: [
-          {
-            src: `http://localhost:8000/video/?id=1`,
-
-            type: "video/mp4",
-          },
-        ],
-        width: "640",
-        height: "360",
-        autoplay: true,
-        controls: true,
-        muted: true,
-        // Add more Video.js options as needed
-      },
     };
   },
   mounted() {
@@ -61,18 +42,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
+.background {
+  background-image: url("@/assets/grain-background.jpg");
+  /* background-color: aqua; */
+  height: 100vh;
+  margin: 0;
   padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 </style>
