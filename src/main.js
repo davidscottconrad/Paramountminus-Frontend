@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import axios from "axios";
+import "./main.css";
 const apiURL = process.env.VUE_APP_API_URL;
 const axiosInstance = axios.create({ baseURL: apiURL });
 const app = createApp(App);
