@@ -7,6 +7,11 @@
         <p class="pt-3 text-xl text-left">
           A story About Wheat. Where does Wheat Go.
         </p>
+        <div class="mt-6">
+          <button class="text-white font-bold py-2 px-4" id="button">
+            Button
+          </button>
+        </div>
       </div>
     </div>
     <div class="content">
@@ -123,4 +128,13 @@ export default {
   align-items: flex-start;
   width: 40vw;
 }
+button {
+  background-color: #e980fc;
+  color: black;
+}
+
+button:hover {
+  background-color: #ffd2fc;
+}
 </style>
+<!-- DDFFF7 FFD2FC E980FC B96AC9 231B1B -->

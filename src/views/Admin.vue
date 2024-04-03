@@ -1,5 +1,4 @@
 <template>
-  <button @click="getTest">tes</button>
   <AddVideo></AddVideo>
   <MyVideo />
 </template>

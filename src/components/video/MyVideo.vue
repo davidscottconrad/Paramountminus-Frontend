@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="m-2">
     <VideoPlayerComponent :options="videoOptions" />
   </div>
 </template>
@@ -34,3 +34,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+* {
+  margin-top: 20vh;
+}
+</style>

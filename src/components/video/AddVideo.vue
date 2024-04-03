@@ -1,23 +1,49 @@
 <template>
-  <div>
+  <div class="w-full">
     <form @submit.prevent="submitForm">
-      <div>
-        <label for="video">Video (MP4):</label>
-        <input type="file" id="video" @change="handleVideoUpload" />
+      <div class="m-2">
+        <label for="video" class="block mb-2">Video (MP4):</label>
+        <input
+          type="file"
+          id="video"
+          @change="handleVideoUpload"
+          class="w-1/2 border rounded-md px-3 py-2"
+        />
       </div>
-      <div>
-        <label for="thumbnail">Thumbnail:</label>
-        <input type="file" id="thumbnail" @change="handleThumbnailUpload" />
+      <div class="m-2">
+        <label for="thumbnail" class="block mb-2">Thumbnail:</label>
+        <input
+          type="file"
+          id="thumbnail"
+          @change="handleThumbnailUpload"
+          class="w-1/2 border rounded-md px-3 py-2"
+        />
       </div>
-      <div>
-        <label for="title">Title:</label>
-        <input type="text" id="title" v-model="formData.title" />
+      <div class="m-2">
+        <label for="title" class="block mb-2">Title:</label>
+        <input
+          type="text"
+          id="title"
+          v-model="formData.title"
+          class="w-1/2 border border-gray-300 rounded-md px-3 py-2"
+        />
       </div>
-      <div>
-        <label for="description">Description:</label>
-        <textarea id="description" v-model="formData.description"></textarea>
+      <div class="m-2">
+        <label for="description" class="block mb-2">Description:</label>
+        <textarea
+          id="description"
+          v-model="formData.description"
+          class="w-1/2 border border-gray-300 rounded-md px-3 py-2"
+        ></textarea>
       </div>
-      <button type="submit">Submit</button>
+      <div class="m-2">
+        <button
+          type="submit"
+          class="bg-blue-500 text-white px-4 py-2 rounded-md"
+        >
+          Submit
+        </button>
+      </div>
     </form>
   </div>
 </template>
