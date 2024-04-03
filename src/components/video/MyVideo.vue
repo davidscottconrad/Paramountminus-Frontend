@@ -19,7 +19,7 @@ export default {
         controls: true,
         sources: [
           {
-            src: `${this.$apiURL}/video/?id=1`,
+            src: `${this.$apiURL}video/?id=1`,
             type: "video/mp4",
           },
         ],
