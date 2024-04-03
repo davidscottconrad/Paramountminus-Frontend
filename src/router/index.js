@@ -1,28 +1,31 @@
-import { createRouter, createWebHistory } from "vue-router";
-import HelloWorld from "../components/HelloWorld.vue";
-import AdminPage from "../components/AdminPage.vue";
-import TestComponent from "../components/TestComponent.vue";
+import { createRouter, createWebHashHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue";
+import Admin from "../views/Admin.vue";
+
+import AboutView from "../views/AboutView.vue";
 const routes = [
   {
     path: "/",
-    name: "HelloWorld",
-    component: HelloWorld,
+    name: "home",
+    component: HomeView,
+  },
+  {
+    path: "/about",
+    name: "about",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: AboutView,
   },
   {
     path: "/admin",
-    name: "AdminPage",
-    component: AdminPage,
+    name: "admin",
+    component: Admin,
   },
-  {
-    path: "/test",
-    name: "TestComponent",
-    component: TestComponent,
-  },
-  // Add more routes as needed
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 

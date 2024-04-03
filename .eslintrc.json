@@ -21,12 +21,7 @@
       "prettier"
     ],
     "rules": {
-      "max-len": [
-        "error",
-        {
-          "code": 100
-        }
-      ],
+      "max-len": "off",
       "prettier/prettier": ["error", { "endOfLine": "auto", "printWidth": 100 }]
     }
   }

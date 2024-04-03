@@ -11,6 +11,7 @@
     "axios": "^1.6.7",
     "core-js": "^3.8.3",
     "cors": "^2.8.5",
+    "tailwindcss": "^3.4.3",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
   },
@@ -19,18 +20,19 @@
     "@babel/eslint-parser": "^7.12.16",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.10.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.22.0",
-    "mkdirp": "^3.0.1",
-    "prettier": "^2.8.8",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "prettier": "^2.4.1",
     "video.js": "^8.10.0"
   },
   "eslintConfig": {
     "root": true,
     "env": {
+      "browser": true,
       "node": true
     },
     "extends": [

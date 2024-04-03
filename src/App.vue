@@ -1,25 +1,6 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/"></router-link>
-      <router-link to="/test"></router-link>
-      <router-link to="/admin"></router-link>
-      admin
-    </nav>
-    <router-view></router-view>
-  </div>
+  <router-view />
 </template>
-
-<script>
-// import HelloWorld from "./components/HelloWorld.vue";
-
-export default {
-  name: "App",
-  components: {
-    // HelloWorld,
-  },
-};
-</script>
 
 <style>
 #app {
@@ -27,7 +8,10 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: white;
+}
+body {
+  margin: 0;
+  background-color: black;
 }
 </style>
