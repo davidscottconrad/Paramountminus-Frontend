@@ -1,13 +1,12 @@
 <template>
   <div class="w-full">
-    test
     <form @submit.prevent="submitForm">
       <div class="m-2">
-        <label for="video" class="block mb-2">Video (MP4):</label>
+        <label for="thumbnail" class="block mb-2">Thumbnail:</label>
         <input
           type="file"
-          id="video"
-          @change="handleVideoUpload"
+          id="thumbnail"
+          @change="handleThumbnailUpload"
           class="w-1/2 border rounded-md px-3 py-2"
         />
       </div>
@@ -26,25 +25,29 @@
 
 <script>
 export default {
-  name: "AddVideo",
+  name: "AddThumbnail",
+  props: {
+    id: {
+      require: true,
+    },
+  },
   data() {
     return {
-      formData: {
-        video: null,
-      },
+      formData: {},
     };
   },
   methods: {
     handleVideoUpload(event) {
       this.formData.video = event.target.files[0];
     },
-
+    handleThumbnailUpload(event) {
+      this.formData.thumbnail = event.target.files[0];
+    },
     submitForm() {
-      const url = "/movie-upload/";
+      const url = "/thumbnail/";
       const formData = new FormData();
-      formData.append("video", this.formData.video);
-
-      console.log(formData);
+      formData.append("image", this.formData.thumbnail);
+      formData.append("id", this.id);
       this.$axios
         .post(url, formData, {
           headers: {

@@ -1,17 +1,23 @@
 <template>
   <div class="w-full">
-    test
     <form @submit.prevent="submitForm">
       <div class="m-2">
-        <label for="video" class="block mb-2">Video (MP4):</label>
+        <label for="title" class="block mb-2">Title:</label>
         <input
-          type="file"
-          id="video"
-          @change="handleVideoUpload"
-          class="w-1/2 border rounded-md px-3 py-2"
+          type="text"
+          id="input"
+          v-model="formData.title"
+          class="w-1/2 border border-gray-300 rounded-md px-3 py-2"
         />
       </div>
-
+      <div class="m-2">
+        <label for="description" class="block mb-2">Description:</label>
+        <textarea
+          id="input"
+          v-model="formData.description"
+          class="w-1/2 border border-gray-300 rounded-md px-3 py-2"
+        ></textarea>
+      </div>
       <div class="m-2">
         <button
           type="submit"
@@ -26,7 +32,7 @@
 
 <script>
 export default {
-  name: "AddVideo",
+  name: "AddMetaData",
   data() {
     return {
       formData: {
@@ -35,14 +41,12 @@ export default {
     };
   },
   methods: {
-    handleVideoUpload(event) {
-      this.formData.video = event.target.files[0];
-    },
-
     submitForm() {
-      const url = "/movie-upload/";
+      const url = "/video-metadata/";
       const formData = new FormData();
-      formData.append("video", this.formData.video);
+
+      formData.append("name", this.formData.title);
+      formData.append("description", this.formData.description);
 
       console.log(formData);
       this.$axios
@@ -64,3 +68,9 @@ export default {
   },
 };
 </script>
+
+<style>
+#input {
+  color: black;
+}
+</style>
