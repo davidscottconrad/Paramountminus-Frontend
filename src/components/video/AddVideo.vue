@@ -27,6 +27,11 @@
 <script>
 export default {
   name: "AddVideo",
+  props: {
+    id: {
+      require: true,
+    },
+  },
   data() {
     return {
       formData: {
@@ -43,6 +48,7 @@ export default {
       const url = "/movie-upload/";
       const formData = new FormData();
       formData.append("video", this.formData.video);
+      formData.append("id", this.id);
 
       console.log(formData);
       this.$axios

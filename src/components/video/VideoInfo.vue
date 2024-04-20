@@ -19,6 +19,8 @@
       <div class="item">{{ item.id }}</div>
       <OneThumbnail :id="item.id"></OneThumbnail>
       <MyVideo :id="item.id"></MyVideo>
+      <AddVideo :id="item.id" />
+      <AddThumbnail :id="item.id" />
       <!-- <div><img :src="item.photo_url" alt="" style="max-height: 100px" /></div> -->
       <!-- <button @click="convertToPNG">Convert to PNG</button> -->
     </div>
@@ -28,11 +30,15 @@
 <script>
 import MyVideo from "./MyVideo.vue";
 import OneThumbnail from "./OneThumbnail.vue";
+import AddVideo from "./AddVideo.vue";
+import AddThumbnail from "./AddThumbnail.vue";
 export default {
   name: "VideoInfo",
   components: {
     OneThumbnail,
     MyVideo,
+    AddVideo,
+    AddThumbnail,
   },
   props: {},
   data() {

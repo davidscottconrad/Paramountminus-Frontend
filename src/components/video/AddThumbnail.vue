@@ -37,9 +37,6 @@ export default {
     };
   },
   methods: {
-    handleVideoUpload(event) {
-      this.formData.video = event.target.files[0];
-    },
     handleThumbnailUpload(event) {
       this.formData.thumbnail = event.target.files[0];
     },
