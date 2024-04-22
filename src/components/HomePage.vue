@@ -1,38 +1,44 @@
 <template>
   <div class="main-container">
-    <div class="background"></div>
-    <div class="spacing"></div>
-    <div class="header">
-      <div class="header-content">
-        <div id="feature-wrapper">
-          <div>
-            <img
-              id="feature-image"
-              :src="FeatureContent.photo_url"
-              :alt="FeatureContent.name"
-            />
+    <div v-if="loading">loading</div>
+    <div v-if="!loading">
+      <div
+        class="background"
+        :style="{ backgroundImage: `url(${FeatureContent.photo_url})` }"
+      ></div>
+      <div class="spacing"></div>
+      <div class="header">
+        <div class="header-content">
+          <div id="feature-wrapper">
+            <div>
+              <img
+                id="feature-image"
+                :src="FeatureContent.photo_url"
+                :alt="FeatureContent.name"
+              />
+            </div>
+            <div
+              id="metadata-wrapper"
+              class="grid grid-rows-2 self-end p-2 ml-5"
+            >
+              <div class="h-min">
+                <h1 class="text-5xl">{{ FeatureContent.name }}</h1>
+              </div>
+              <div class="h-min" id="description-wrapper">
+                <p class="pt-3 text-xl text-left">
+                  {{ FeatureContent.description }}
+                </p>
+              </div>
+              <div class="mt-5 h-min">
+                <button class="text-white font-bold py-2 px-4" id="button">
+                  Watch Now
+                </button>
+              </div>
+            </div>
           </div>
-
-          <div id="metadata-wrapper" class="grid grid-rows-2 self-end p-2 ml-5">
-            <div class="h-min">
-              <h1 class="text-5xl">{{ FeatureContent.name }}</h1>
-            </div>
-            <div class="h-min" id="description-wrapper">
-              <p class="pt-3 text-xl text-left">
-                {{ FeatureContent.description }}
-              </p>
-            </div>
-            <div class="mt-5 h-min">
-              <button class="text-white font-bold py-2 px-4" id="button">
-                Watch Now
-              </button>
-            </div>
-          </div>
+          <ConentRow :content="content" />
         </div>
       </div>
-    </div>
-    <div class="content">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi odio
     </div>
   </div>
 </template>
@@ -43,9 +49,11 @@
 // import MyVideo from "./video/MyVideo.vue";
 // import AddVideo from "./video/AddVideo.vue";
 // import FeatureContent from "./Home/FeatureContent.vue";
+import ConentRow from "./Home/ContentRow.vue";
 export default {
   name: "HomePage",
   components: {
+    ConentRow,
     // FeatureContent,
     // MyVideo,
     // AddVideo,
@@ -55,6 +63,8 @@ export default {
       items: null,
       scrollThreshold: 500,
       FeatureContent: Object,
+      content: Array,
+      loading: true,
     };
   },
   mounted() {
@@ -71,11 +81,13 @@ export default {
         .get(url)
         .then((response) => {
           console.log(response.data);
-          this.FeatureContent = response.data[0];
+          this.FeatureContent = response.data.shift();
+          this.content = [...response.data, ...response.data, ...response.data];
         })
         .catch((error) => {
           console.log(error);
-        });
+        })
+        .then(() => (this.loading = false));
       // function body here
     },
     handleScroll() {
@@ -93,7 +105,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .background {
-  background-image: url("@/assets/grain-background.jpg");
   height: 100vh;
   width: 100%;
   position: fixed;
@@ -114,7 +125,7 @@ export default {
   height: 80vh;
   z-index: 2;
 
-  padding-left: 2vw;
+  padding-left: 3vw;
   padding-right: 10vh;
   background-image: linear-gradient(
     to bottom,
@@ -141,7 +152,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 40vw;
 }
 /* Define the initial background gradient */
 button {
