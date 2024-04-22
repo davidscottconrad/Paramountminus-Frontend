@@ -36,6 +36,7 @@ export default {
     return {
       formData: {
         video: null,
+        background: false,
       },
     };
   },
@@ -45,7 +46,12 @@ export default {
     },
 
     submitForm() {
-      const url = "/movie-upload/";
+      let url = "/movie-upload/";
+
+      if (this.formData.background) {
+        url = "/movie-upload?background=true";
+      }
+
       const formData = new FormData();
       formData.append("video", this.formData.video);
       formData.append("id", this.id);

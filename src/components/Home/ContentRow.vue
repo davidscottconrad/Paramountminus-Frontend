@@ -12,7 +12,7 @@
     </a>
     <div class="scrollable-row" ref="scrollableRow" @scroll="handleScroll">
       <div class="item m-1" v-for="(item, idx) in content" :key="idx">
-        <img :src="item.photo_url" :alt="item.name" />
+        <ResponsiveImage :src="item.photo_url" :alt="item.name" />
       </div>
     </div>
     <a
@@ -29,8 +29,12 @@
 </template>
 
 <script>
+import ResponsiveImage from "./ResponsiveImage.vue";
 export default {
   name: "ContentRow",
+  components: {
+    ResponsiveImage,
+  },
   props: {
     content: Array,
   },
@@ -76,7 +80,6 @@ export default {
   position: relative;
   max-width: 100%;
   overflow: hidden;
-  margin-top: 15vh;
   background: transparent;
 }
 

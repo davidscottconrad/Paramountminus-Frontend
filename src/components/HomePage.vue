@@ -4,19 +4,12 @@
     <div v-if="!loading">
       <div
         class="background"
-        :style="{ backgroundImage: `url(${FeatureContent.photo_url})` }"
+        :style="{ backgroundImage: `url(${FeatureContent.background_url})` }"
       ></div>
       <div class="spacing"></div>
       <div class="header">
         <div class="header-content">
           <div id="feature-wrapper">
-            <div>
-              <img
-                id="feature-image"
-                :src="FeatureContent.photo_url"
-                :alt="FeatureContent.name"
-              />
-            </div>
             <div
               id="metadata-wrapper"
               class="grid grid-rows-2 self-end p-2 ml-5"
@@ -25,6 +18,9 @@
                 <h1 class="text-5xl">{{ FeatureContent.name }}</h1>
               </div>
               <div class="h-min" id="description-wrapper">
+                <p class="pt-3 text-xl text-left" style="color: #00d86d">
+                  Netflax Original
+                </p>
                 <p class="pt-3 text-xl text-left">
                   {{ FeatureContent.description }}
                 </p>
@@ -37,8 +33,12 @@
             </div>
           </div>
           <ConentRow :content="content" />
+          <ConentRow :content="content" />
+          <ConentRow :content="content" />
+          <ConentRow :content="content" />
         </div>
       </div>
+      <div id="background-black"></div>
     </div>
   </div>
 </template>
@@ -49,11 +49,13 @@
 // import MyVideo from "./video/MyVideo.vue";
 // import AddVideo from "./video/AddVideo.vue";
 // import FeatureContent from "./Home/FeatureContent.vue";
+// import ResponsiveImage from "./Home/ResponsiveImage.vue";
 import ConentRow from "./Home/ContentRow.vue";
 export default {
   name: "HomePage",
   components: {
     ConentRow,
+    // ResponsiveImage,
     // FeatureContent,
     // MyVideo,
     // AddVideo,
@@ -83,6 +85,7 @@ export default {
           console.log(response.data);
           this.FeatureContent = response.data.shift();
           this.content = [...response.data, ...response.data, ...response.data];
+          console.log("featurecontent", this.FeatureContent.background_url);
         })
         .catch((error) => {
           console.log(error);
@@ -122,7 +125,7 @@ export default {
   position: relative;
   margin-top: 20vh; /* Adjust the margin-top to start halfway down the page */
   width: 100%;
-  height: 80vh;
+  height: 60vh;
   z-index: 2;
 
   padding-left: 3vw;
@@ -130,13 +133,13 @@ export default {
   background-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.9) 70%,
     rgba(0, 0, 0, 1)
   ); /* Gradient from transparent to black */
 }
 
 #feature-image {
-  height: 300px;
-  width: 300px;
+  aspect-ratio: 9/16;
 }
 
 .content {
@@ -161,12 +164,22 @@ button {
 }
 
 .spacing {
-  height: 25vh;
+  height: 30vh;
 }
 
 #feature-wrapper {
   display: flex;
+  margin-bottom: 10vh;
   flex-direction: row;
+}
+
+#background-black {
+  position: absolute;
+  top: 100vh;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Adjust height as needed */
+  background-color: black; /* Background color */
 }
 /*
 #metadata-wrapper {

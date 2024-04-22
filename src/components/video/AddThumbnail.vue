@@ -10,6 +10,13 @@
           class="w-1/2 border rounded-md px-3 py-2"
         />
       </div>
+      <label for="background" class="block mb-2">Background: </label>
+      <input
+        type="checkbox"
+        id="background"
+        v-model="formData.background"
+        class="w-1/2 border rounded-md px-3 py-2"
+      />
 
       <div class="m-2">
         <button
@@ -33,7 +40,9 @@ export default {
   },
   data() {
     return {
-      formData: {},
+      formData: {
+        background: false,
+      },
     };
   },
   methods: {
@@ -41,7 +50,11 @@ export default {
       this.formData.thumbnail = event.target.files[0];
     },
     submitForm() {
-      const url = "/thumbnail/";
+      let url = "/thumbnail/";
+      console.log("backgroun", this.formData.background);
+      if (this.formData.background) {
+        url = "/thumbnail/?background=true";
+      }
       const formData = new FormData();
       formData.append("image", this.formData.thumbnail);
       formData.append("id", this.id);
