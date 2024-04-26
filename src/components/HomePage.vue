@@ -102,7 +102,7 @@ export default {
           console.log(response.data);
           this.FeatureContent = response.data[4];
           this.content = response.data;
-          console.log("featurecontent", this.FeatureContent.background_url);
+          console.log("content", this.content);
         })
         .catch((error) => {
           console.log(error);
