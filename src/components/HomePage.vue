@@ -28,7 +28,7 @@
                   {{ FeatureContent.description }}
                 </p>
               </div>
-              <div class="mt-5 h-min">
+              <div class="mt-5 h-min justify-self-start">
                 <button
                   class="text-white font-bold py-2 px-4"
                   id="button"
