@@ -22,7 +22,7 @@
               </div>
               <div class="h-min" id="description-wrapper">
                 <p class="pt-3 text-xl text-left" style="color: #00d86d">
-                  Netflax Original
+                  Paramount Original
                 </p>
                 <p class="pt-3 text-xl text-left">
                   {{ FeatureContent.description }}
