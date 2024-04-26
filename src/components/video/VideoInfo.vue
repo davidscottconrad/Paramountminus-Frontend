@@ -18,7 +18,7 @@
       <div><h1>id</h1></div>
       <div class="item">{{ item.id }}</div>
       <OneThumbnail :id="item.id"></OneThumbnail>
-      <MyVideo :id="item.id"></MyVideo>
+      <!-- <MyVideo :id="item.id"></MyVideo> -->
       <AddVideo :id="item.id" />
       <AddThumbnail :id="item.id" />
       <!-- <div><img :src="item.photo_url" alt="" style="max-height: 100px" /></div> -->
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import MyVideo from "./MyVideo.vue";
+// import MyVideo from "./MyVideo.vue";
 import OneThumbnail from "./OneThumbnail.vue";
 import AddVideo from "./AddVideo.vue";
 import AddThumbnail from "./AddThumbnail.vue";
@@ -36,7 +36,7 @@ export default {
   name: "VideoInfo",
   components: {
     OneThumbnail,
-    MyVideo,
+    // MyVideo,
     AddVideo,
     AddThumbnail,
   },

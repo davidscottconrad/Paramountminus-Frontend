@@ -1,6 +1,9 @@
 <template>
-  <div class="m-2" v-if="loading">
-    <VideoPlayerComponent :options="videoOptions" />
+  <div v-if="loading" class="video-container">
+    <div></div>
+    <div class="video-container-2">
+      <VideoPlayerComponent :options="videoOptions" />
+    </div>
   </div>
 </template>
 
@@ -20,7 +23,6 @@ export default {
   data() {
     return {
       loading: false,
-
       videoOptions: {
         autoplay: true,
         controls: true,
@@ -30,8 +32,6 @@ export default {
             type: "video/mp4",
           },
         ],
-        width: "480",
-        height: "270",
         muted: true,
       },
     };
@@ -43,14 +43,13 @@ export default {
   methods: {
     getVideo() {
       const url = "/movie-upload/?id=" + this.id;
-
       this.$axios
         .get(url)
         .then((response) => {
           console.log("video", response.data);
           this.videoOptions.sources[0].src = response.data.signed_url;
           console.log(
-            "video inside videopotions",
+            "video inside videoOptions",
             this.videoOptions.sources[0].src
           );
         })
@@ -68,6 +67,25 @@ export default {
 </script>
 
 <style scoped>
-* {
+.video-container-2 {
+  height: 300px;
+  width: 400px;
+}
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-container >>> .video-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 </style>

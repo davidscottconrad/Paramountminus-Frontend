@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import Admin from "../views/Admin.vue";
-
+import WatchNow from "../components/video/WatchNow.vue";
 import AboutView from "../views/AboutView.vue";
 const routes = [
   {
@@ -21,6 +21,12 @@ const routes = [
     path: "/admin",
     name: "admin",
     component: Admin,
+  },
+  {
+    path: "/watch-now/:id",
+    name: "WatchNow",
+    component: WatchNow,
+    props: true, // Enable passing route params as props
   },
 ];
 

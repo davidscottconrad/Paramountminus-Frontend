@@ -15,7 +15,7 @@
               class="grid grid-rows-2 self-end p-2 ml-5"
             >
               <div class="h-min">
-                <h1 class="text-5xl">{{ FeatureContent.name }}</h1>
+                <h1 class="text-5xl text-left">{{ FeatureContent.name }}</h1>
               </div>
               <div class="h-min" id="description-wrapper">
                 <p class="pt-3 text-xl text-left" style="color: #00d86d">
@@ -26,13 +26,22 @@
                 </p>
               </div>
               <div class="mt-5 h-min">
-                <button class="text-white font-bold py-2 px-4" id="button">
+                <button
+                  class="text-white font-bold py-2 px-4"
+                  id="button"
+                  @click="
+                    $router.push({ path: `/watch-now/${FeatureContent.id}` })
+                  "
+                >
                   Watch Now
                 </button>
               </div>
             </div>
           </div>
-          <ConentRow :content="content" />
+          <ConentRow
+            :content="content"
+            @feature-selected="handleFeatureSelected"
+          />
           <ConentRow :content="content" />
           <ConentRow :content="content" />
           <ConentRow :content="content" />
@@ -77,6 +86,11 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
+    handleFeatureSelected(item) {
+      console.log("Selected feature ID:", item);
+      // Handle the selected feature ID as needed
+      this.FeatureContent = item;
+    },
     GetVideoMetaData() {
       const url = "/video-metadata/?photo=true";
       this.$axios
@@ -171,6 +185,7 @@ button {
   display: flex;
   margin-bottom: 10vh;
   flex-direction: row;
+  max-width: 600px;
 }
 
 #background-black {

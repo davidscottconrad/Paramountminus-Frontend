@@ -12,7 +12,12 @@
     </a>
     <div class="scrollable-row" ref="scrollableRow" @scroll="handleScroll">
       <div class="item m-1" v-for="(item, idx) in content" :key="idx">
-        <ResponsiveImage :src="item.photo_url" :alt="item.name" />
+        <ResponsiveImage
+          :videoID="item.id"
+          :src="item.photo_url"
+          :alt="item.name"
+          @click="selectFeature(item)"
+        />
       </div>
     </div>
     <a
@@ -49,6 +54,10 @@ export default {
     this.checkArrows();
   },
   methods: {
+    selectFeature(item) {
+      console.log("select feature");
+      this.$emit("feature-selected", item);
+    },
     scrollLeft() {
       const scrollableRow = this.$refs.scrollableRow;
       scrollableRow.scrollLeft -= window.innerWidth * 0.7; // Scroll 70vw to the left

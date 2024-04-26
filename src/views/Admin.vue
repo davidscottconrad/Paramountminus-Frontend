@@ -2,7 +2,7 @@
   <div>
     admin
     <AddMetaData></AddMetaData>
-    <!-- <AddVideo></AddVideo> -->
+    <AddVideo></AddVideo>
 
     <VideoInfo />
   </div>

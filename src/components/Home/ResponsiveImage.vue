@@ -1,5 +1,5 @@
 <template>
-  <div class="responsive-image" @click="movieSelect">
+  <div class="responsive-image">
     <img
       :style="{
         width: imageWidth + 'px',
@@ -17,6 +17,9 @@
 export default {
   name: "ResponsiveImage",
   props: {
+    videoID: {
+      required: true,
+    },
     src: {
       type: String,
       required: true,
@@ -49,9 +52,6 @@ export default {
     },
   },
   methods: {
-    movieSelect() {
-      console.log("selected");
-    },
     handleResize() {
       this.windowWidth = window.innerWidth;
     },
