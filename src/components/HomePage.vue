@@ -100,8 +100,8 @@ export default {
         .get(url)
         .then((response) => {
           console.log(response.data);
-          this.FeatureContent = response.data.shift();
-          this.content = [...response.data, ...response.data, ...response.data];
+          this.FeatureContent = response.data[4];
+          this.content = response.data;
           console.log("featurecontent", this.FeatureContent.background_url);
         })
         .catch((error) => {
