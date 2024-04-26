@@ -44,7 +44,6 @@ export default {
   },
   computed: {
     imageWidth() {
-      console.log(this.windowWidth / 5.72);
       // Calculate the width based on the window width (e.g., 50% of the window width)
       return this.windowWidth / 5.72;
     },

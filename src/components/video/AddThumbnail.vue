@@ -51,7 +51,6 @@ export default {
     },
     submitForm() {
       let url = "/thumbnail/";
-      console.log("backgroun", this.formData.background);
       if (this.formData.background) {
         url = "/thumbnail/?background=true";
       }
@@ -65,7 +64,6 @@ export default {
           },
         })
         .then((response) => {
-          console.log(response.data);
           alert("Video uploaded successfully!");
         })
         .catch((error) => {

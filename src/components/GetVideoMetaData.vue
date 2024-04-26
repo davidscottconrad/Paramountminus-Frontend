@@ -62,7 +62,6 @@ export default {
       this.$axios
         .get(url)
         .then((response) => {
-          console.log(response.data);
           this.videoMetadata = response.data;
           // this.videoMetadata = response.data.map((video) => {
           //   return {

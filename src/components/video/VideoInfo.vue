@@ -56,7 +56,7 @@ export default {
         .get(url)
         .then((response) => {
           this.videoData = response.data;
-          console.log(this.videoData);
+
           this.loading = false;
         })
         .catch((error) => {

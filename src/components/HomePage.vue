@@ -62,12 +62,6 @@
 </template>
 
 <script>
-// import GetVideoMetaData from "./GetVideoMetaData.vue";
-
-// import MyVideo from "./video/MyVideo.vue";
-// import AddVideo from "./video/AddVideo.vue";
-// import FeatureContent from "./Home/FeatureContent.vue";
-// import ResponsiveImage from "./Home/ResponsiveImage.vue";
 import ConentRow from "./Home/ContentRow.vue";
 import NavBar from "./Home/NavBar.vue";
 export default {
@@ -75,10 +69,6 @@ export default {
   components: {
     ConentRow,
     NavBar,
-    // ResponsiveImage,
-    // FeatureContent,
-    // MyVideo,
-    // AddVideo,
   },
   data() {
     return {
@@ -100,8 +90,6 @@ export default {
   },
   methods: {
     handleFeatureSelected(item) {
-      console.log("Selected feature ID:", item);
-      // Handle the selected feature ID as needed
       this.FeatureContent = item;
     },
     shuffleContent(array) {
@@ -124,8 +112,6 @@ export default {
           this.content = response.data;
           this.contentTwo = this.shuffleContent(this.content);
           this.contentThree = this.shuffleContent(this.content);
-          console.log("content 1", this.content);
-          console.log("contenttwo", this.contentTwo);
         })
         .catch((error) => {
           console.log(error);

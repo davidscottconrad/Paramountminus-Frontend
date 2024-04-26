@@ -48,7 +48,6 @@ export default {
       formData.append("name", this.formData.title);
       formData.append("description", this.formData.description);
 
-      console.log(formData);
       this.$axios
         .post(url, formData, {
           headers: {

@@ -37,7 +37,6 @@ export default {
     };
   },
   mounted() {
-    console.log(this.$apiURL);
     this.getVideo();
   },
   methods: {
@@ -46,12 +45,7 @@ export default {
       this.$axios
         .get(url)
         .then((response) => {
-          console.log("video", response.data);
           this.videoOptions.sources[0].src = response.data.signed_url;
-          console.log(
-            "video inside videoOptions",
-            this.videoOptions.sources[0].src
-          );
         })
         .catch((error) => {
           console.error("Error loading video" + error);

@@ -23,9 +23,7 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      this.player = videojs(this.$refs.videoPlayer, this.options, () => {
-        console.log("Video player is ready");
-      });
+      this.player = videojs(this.$refs.videoPlayer, this.options, () => {});
     });
   },
   beforeDestroy() {

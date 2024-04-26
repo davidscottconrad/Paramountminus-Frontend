@@ -27,7 +27,6 @@ export default {
       this.$axios
         .get(url)
         .then((response) => {
-          console.log(response.data);
           this.signed_url = response.data.signed_url;
         })
         .catch((error) => {

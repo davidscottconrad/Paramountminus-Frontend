@@ -56,7 +56,6 @@ export default {
       formData.append("video", this.formData.video);
       formData.append("id", this.id);
 
-      console.log(formData);
       this.$axios
         .post(url, formData, {
           headers: {

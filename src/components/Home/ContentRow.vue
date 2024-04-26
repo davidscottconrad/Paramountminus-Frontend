@@ -50,12 +50,10 @@ export default {
     };
   },
   mounted() {
-    console.log("content", this.content);
     this.checkArrows();
   },
   methods: {
     selectFeature(item) {
-      console.log("select feature");
       this.$emit("feature-selected", item);
     },
     scrollLeft() {
