@@ -1,7 +1,9 @@
 <template>
   <div class="main-container">
     <NavBar />
-    <div v-if="loading">loading</div>
+    <div v-if="loading" class="loading-container">
+      <div class="loader"></div>
+    </div>
     <div v-if="!loading">
       <div
         class="background"
@@ -235,5 +237,31 @@ button {
   align-items: center;
   justify-content: left;
 } */
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 100px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #0037c5;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30vh;
+}
 </style>
 <!-- DDFFF7 FFD2FC E980FC B96AC9 231B1B -->
