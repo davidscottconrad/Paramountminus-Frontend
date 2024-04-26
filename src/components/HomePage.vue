@@ -103,15 +103,11 @@ export default {
       this.FeatureContent = item;
     },
     shuffleContent(array) {
-      const shuffledArray = [...array];
-      for (let i = shuffledArray.length - 1; i > 0; i--) {
+      for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [shuffledArray[i], shuffledArray[j]] = [
-          shuffledArray[j],
-          shuffledArray[i],
-        ];
+        [array[i], array[j]] = [array[j], array[i]];
       }
-      return shuffledArray;
+      return array;
     },
     GetVideoMetaData() {
       const url = "/video-metadata/?photo=true";
@@ -122,8 +118,8 @@ export default {
           this.content = response.data;
           this.contentTwo = this.shuffleContent(this.content);
           this.contentThree = this.shuffleContent(this.content);
-          console.log("content 1", this.content);
-          console.log("contenttwo", this.contentTwo);
+          console.log("content", this.content);
+          console.log(this.contentTwo);
         })
         .catch((error) => {
           console.log(error);
