@@ -1,5 +1,6 @@
 <template>
   <div class="main-container">
+    <NavBar />
     <div v-if="loading">loading</div>
     <div v-if="!loading">
       <div
@@ -60,10 +61,12 @@
 // import FeatureContent from "./Home/FeatureContent.vue";
 // import ResponsiveImage from "./Home/ResponsiveImage.vue";
 import ConentRow from "./Home/ContentRow.vue";
+import NavBar from "./Home/NavBar.vue";
 export default {
   name: "HomePage",
   components: {
     ConentRow,
+    NavBar,
     // ResponsiveImage,
     // FeatureContent,
     // MyVideo,
@@ -143,7 +146,7 @@ export default {
   z-index: 2;
 
   padding-left: 3vw;
-  padding-right: 10vh;
+  padding-right: 3vw;
   background-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0),

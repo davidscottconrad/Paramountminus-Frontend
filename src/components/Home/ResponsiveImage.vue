@@ -6,6 +6,8 @@
         height: imageHeight + 'px',
         maxWidth: '207.5px',
         maxHeight: '311.25px',
+        minHeight: '157px',
+        minWidth: '105px',
       }"
       :src="src"
       :alt="alt"

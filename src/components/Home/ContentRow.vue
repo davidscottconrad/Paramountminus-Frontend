@@ -90,6 +90,7 @@ export default {
   max-width: 100%;
   overflow: hidden;
   background: transparent;
+  margin-bottom: 4vh;
 }
 
 .scrollable-row {
