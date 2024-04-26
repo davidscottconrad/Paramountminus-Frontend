@@ -43,9 +43,15 @@
             :content="content"
             @feature-selected="handleFeatureSelected"
           />
-          <ConentRow :content="content" />
-          <ConentRow :content="content" />
-          <ConentRow :content="content" />
+
+          <ConentRow
+            :content="contentTwo"
+            @feature-selected="handleFeatureSelected"
+          />
+          <ConentRow
+            :content="contentThree"
+            @feature-selected="handleFeatureSelected"
+          />
         </div>
       </div>
       <div id="background-black"></div>
@@ -79,6 +85,8 @@ export default {
       FeatureContent: Object,
       content: Array,
       loading: true,
+      contentTwo: Array,
+      contentThree: Array,
     };
   },
   mounted() {
@@ -94,15 +102,24 @@ export default {
       // Handle the selected feature ID as needed
       this.FeatureContent = item;
     },
+    shuffleContent(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    },
     GetVideoMetaData() {
       const url = "/video-metadata/?photo=true";
       this.$axios
         .get(url)
         .then((response) => {
-          console.log(response.data);
           this.FeatureContent = response.data[4];
           this.content = response.data;
+          this.contentTwo = this.shuffleContent(this.content);
+          this.contentThree = this.shuffleContent(this.content);
           console.log("content", this.content);
+          console.log("contenttwo", this.contentTwo);
         })
         .catch((error) => {
           console.log(error);
