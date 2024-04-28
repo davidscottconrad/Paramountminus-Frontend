@@ -27,7 +27,8 @@
             >
           </li>
           <li>
-            <a href="https://github.com/davidscottconrad/frontend-netflax"
+            <a
+              href="https://github.com/davidscottconrad/Paramountminus-Frontend"
               >FrontEnd GitHub</a
             >
           </li>
