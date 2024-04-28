@@ -1,37 +1,38 @@
 <template>
-  <div class="navbar">
-    <div>
-      <ul>
-        <li>
-          <a href="">
-            <img
-              class="p-2"
-              :src="logoImage"
-              alt="Paramount+ Clone"
-              style="height: 40px"
-            />
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div>
-      <ul>
-        <li><a href="">Resume</a></li>
-        <li>
-          <a href="https://github.com/davidscottconrad/django9"
-            >Backend Github</a
-          >
-        </li>
-        <li>
-          <a href="https://github.com/davidscottconrad/frontend-netflax"
-            >FrontEnd GitHub</a
-          >
-        </li>
-      </ul>
+  <div>
+    <div class="navbar">
+      <div>
+        <ul>
+          <li>
+            <a href="">
+              <img
+                class="p-2"
+                :src="logoImage"
+                alt="Paramount+ Clone"
+                style="height: 40px; min-width: 122.06px"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><a href="">Resume</a></li>
+          <li>
+            <a href="https://github.com/davidscottconrad/django9"
+              >Backend Github</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/davidscottconrad/frontend-netflax"
+              >FrontEnd GitHub</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
-
 <script>
 import PMLogo from "@/assets/pmlogo.png";
 
@@ -44,10 +45,9 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 .navbar {
-  top: 0;
+  top: 50px;
   left: 0;
   width: 100%;
   height: 50px;
@@ -61,15 +61,18 @@ export default {
   align-items: center;
   z-index: 100;
 }
+
 .navbar ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
 }
+
 .navbar li {
   margin: 0 10px;
 }
+
 .navbar a {
   color: white;
   text-decoration: none;
@@ -78,6 +81,7 @@ export default {
   text-transform: uppercase;
   transition: color 0.3s ease;
 }
+
 .navbar a:hover {
   color: #ccc;
 }

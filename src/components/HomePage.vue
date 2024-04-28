@@ -91,6 +91,10 @@ export default {
   methods: {
     handleFeatureSelected(item) {
       this.FeatureContent = item;
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     },
     shuffleContent(array) {
       const shuffledArray = [...array];
