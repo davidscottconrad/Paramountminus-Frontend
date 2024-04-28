@@ -18,9 +18,7 @@
       <div>
         <ul>
           <li>
-            <a :href="resumeUrl" target="_blank" rel="noopener noreferrer"
-              >Resume</a
-            >
+            <DownloadResume />
           </li>
 
           <li>
@@ -40,9 +38,12 @@
 </template>
 <script>
 import PMLogo from "@/assets/pmlogo.png";
-
+import DownloadResume from "./DownloadResume.vue";
 export default {
   name: "NavBar",
+  components: {
+    DownloadResume,
+  },
   data() {
     return {
       logoImage: PMLogo,
