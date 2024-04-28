@@ -1,6 +1,6 @@
 # Paramount+ Clone
 
-This project is a clone of the Paramount+ streaming service, showcasing my development skills. It utilizes a Vue.js frontend and a Django backend, deployed using various AWS services such as AWS Amplify, App Runner, S3, VPC, Route 53, Secrets Manager, and RDS. The project is containerized using Docker.
+This project is a clone of the Paramount+ streaming service, showcasing my development skills. It utilizes a Vue.js frontend and a Django backend, deployed using various AWS services such as AWS Amplify, App Runner, S3, VPC, Route 53, Secrets Manager, and RDS. The project is containerized using Docker. If moved to Elastic Containers on AWS, this could be a fully scalable streaming website (with some clean up).
 
 ## Live Demo
 
