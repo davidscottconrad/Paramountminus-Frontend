@@ -61,4 +61,4 @@ For any inquiries or questions, feel free to reach out to me:
 
 - [Resume](https://github.com/davidscottconrad/frontend-netflax/blob/main/public/Resume.pdf)
 - Email: David.Scott.Conrad@gmail.com
-- LinkedIn: [Your LinkedIn](linkedin.com/in/david-scott-conrad)
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/david-scott-conrad)
