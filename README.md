@@ -6,6 +6,13 @@ This project is a clone of the Paramount+ streaming service, showcasing my devel
 
 Check out the live demo of the Paramount+ clone at: [paramountminus.me](https://paramountminus.me)
 
+## Project Repositories
+
+The Paramount+ clone consists of two separate repositories for the frontend and backend:
+
+- Frontend: [https://github.com/davidscottconrad/frontend-netflax](https://github.com/davidscottconrad/frontend-netflax)
+- Backend: [https://github.com/davidscottconrad/django9](https://github.com/davidscottconrad/django9)
+
 ## Technologies Used
 
 - Frontend:
