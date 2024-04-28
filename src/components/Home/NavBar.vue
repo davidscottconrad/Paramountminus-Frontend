@@ -17,7 +17,12 @@
       </div>
       <div>
         <ul>
-          <li><a href="">Resume</a></li>
+          <li>
+            <a :href="resumeUrl" target="_blank" rel="noopener noreferrer"
+              >Resume</a
+            >
+          </li>
+
           <li>
             <a href="https://github.com/davidscottconrad/django9"
               >Backend Github</a
@@ -41,6 +46,7 @@ export default {
   data() {
     return {
       logoImage: PMLogo,
+      resumeUrl: process.env.BASE_URL + "Resume.pdf",
     };
   },
 };
