@@ -63,7 +63,7 @@ export default {
             "Content-Type": "multipart/form-data",
           },
         })
-        .then((response) => {
+        .then(() => {
           alert("Video uploaded successfully!");
         })
         .catch((error) => {
