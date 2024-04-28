@@ -17,9 +17,9 @@
       </div>
       <div>
         <ul>
-          <li>
+          <!-- <li>
             <DownloadResume />
-          </li>
+          </li> -->
 
           <li>
             <a href="https://github.com/davidscottconrad/django9"
@@ -38,11 +38,11 @@
 </template>
 <script>
 import PMLogo from "@/assets/pmlogo.png";
-import DownloadResume from "./DownloadResume.vue";
+// import DownloadResume from "./DownloadResume.vue";
 export default {
   name: "NavBar",
   components: {
-    DownloadResume,
+    // DownloadResume,
   },
   data() {
     return {
